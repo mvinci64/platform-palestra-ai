@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StatusBadge from '../components/StatusBadge.astro';
+---
+
+<Layout title="Industry" description="Level 4 — talent pipeline interface, roadmap, and the school-onboarding stub.">
+  <section class="section">
+    <div class="flex items-center gap-3">
+      <span class="flex h-12 w-12 items-center justify-center rounded-lg bg-navy-900 text-lg font-bold text-orange-400">4</span>
+      <div>
+        <p class="eyebrow">Level 4</p>
+        <h1 class="text-3xl font-bold text-navy-950 md:text-4xl">Industry</h1>
+      </div>
+      <StatusBadge status="roadmap" label="Roadmap — conversations in progress" />
+    </div>
+    <p class="mt-5 max-w-3xl text-lg text-navy-700">
+      A talent-pipeline interface connecting the "AI ambassadors" coming out of Level 2
+      with the tech/telco ecosystem already engaged in early-stage conversations about
+      the project. No partnership agreements are in place — this page is a roadmap, not
+      a commitment.
+    </p>
+  </section>
+
+  <section class="section border-t border-navy-100">
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="card">
+        <p class="text-xs font-semibold uppercase tracking-widest text-orange-600">Concept</p>
+        <p class="mt-3 font-bold text-navy-900">From "AI ambassador" to talent pipeline</p>
+        <p class="mt-2 text-sm text-navy-700">
+          Liceo students who go through the Teenager Circle build a documented track
+          record — facilitation, AI-output review, evaluation design. Level 4 would
+          make that track record visible to industry partners exploring early talent
+          engagement.
+        </p>
+      </div>
+      <div class="card">
+        <p class="text-xs font-semibold uppercase tracking-widest text-orange-600">Status — honestly stated</p>
+        <p class="mt-3 text-sm text-navy-700">
+          Conversations with players in the tech/telco ecosystem are at the
+          professional-dialogue stage — no formal partnerships, no commitments, no
+          named logos on this prototype. This level exists to show the architecture
+          is extensible, not to announce a deal.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- A4: School onboarding stub -->
+  <section class="section border-t border-navy-100">
+    <p class="eyebrow">School onboarding (preview)</p>
+    <h2 class="mt-3 text-3xl font-bold text-navy-950">Bring Palestra AI to your school</h2>
+    <p class="mt-3 max-w-3xl text-navy-700">
+      A preview of the registration flow for schools that want to join the programme —
+      this mirrors the "Porta il progetto nella tua scuola" call-to-action already on
+      palestra.ai. <strong>This form does not submit anywhere yet</strong> — it is a
+      design mockup for the school-onboarding app.
+    </p>
+
+    <div class="mt-8 card max-w-2xl">
+      <StatusBadge status="mockup" label="Non-functional mockup" />
+      <form class="mt-5 grid gap-4" onsubmit="event.preventDefault()">
+        <div>
+          <label class="text-sm font-semibold text-navy-900" for="school">School name</label>
+          <input id="school" type="text" placeholder="e.g. IC Giovanni Falcone" class="mt-1 w-full rounded-md border border-navy-200 px-3 py-2 text-sm" disabled />
+        </div>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div>
+            <label class="text-sm font-semibold text-navy-900" for="level">School level</label>
+            <select id="level" class="mt-1 w-full rounded-md border border-navy-200 px-3 py-2 text-sm" disabled>
+              <option>Primary</option>
+              <option>Secondary (lower)</option>
+              <option>Secondary (upper) / Liceo</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-sm font-semibold text-navy-900" for="contact">Contact email</label>
+            <input id="contact" type="email" placeholder="name@school.it" class="mt-1 w-full rounded-md border border-navy-200 px-3 py-2 text-sm" disabled />
+          </div>
+        </div>
+        <div>
+          <label class="text-sm font-semibold text-navy-900" for="notes">Notes</label>
+          <textarea id="notes" rows="3" placeholder="What interests you about the programme?" class="mt-1 w-full rounded-md border border-navy-200 px-3 py-2 text-sm" disabled></textarea>
+        </div>
+        <button type="submit" class="btn-primary w-fit opacity-60" disabled>Submit interest (mockup — not active)</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="section border-t border-navy-100 text-center">
+    <a href="/about" class="btn-primary">About &amp; provenance →</a>
+  </div>
+</Layout>

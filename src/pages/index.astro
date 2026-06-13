@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StatusBadge from '../components/StatusBadge.astro';
+import { levels } from '../data/levels';
+---
+
+<Layout title="Home">
+  <!-- Hero -->
+  <section class="section grid gap-12 md:grid-cols-2 md:items-center">
+    <div>
+      <p class="eyebrow">Palestra AI · Platform prototype</p>
+      <h1 class="mt-3 text-4xl font-bold leading-tight text-navy-950 md:text-5xl">
+        One methodology.<br />Four levels of delivery.
+      </h1>
+      <p class="mt-5 text-lg text-navy-700">
+        Palestra AI is an educational architecture for human–AI co-formation —
+        generative AI as a medium for human formation, not a substitute for it.
+        This platform is the technical connector that carries that single methodology
+        across four educational levels, from primary school to industry.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/how-it-works" class="btn-primary">How it works</a>
+        <a href="/primary" class="btn-secondary">See Level 1 in detail</a>
+      </div>
+    </div>
+    <div class="rounded-2xl border border-navy-100 bg-white p-6 shadow-sm">
+      <p class="text-xs font-semibold uppercase tracking-widest text-navy-400">Phase I pilot, AY 2025/26</p>
+      <div class="mt-4 grid grid-cols-2 gap-4">
+        <div>
+          <p class="stat">~400</p>
+          <p class="text-sm text-navy-600">primary pupils, IC Bianca</p>
+        </div>
+        <div>
+          <p class="stat">~150</p>
+          <p class="text-sm text-navy-600">Liceo Majorana co-educators</p>
+        </div>
+        <div>
+          <p class="stat">61%</p>
+          <p class="text-sm text-navy-600">recalled "success isn't only winning" — top POST score</p>
+        </div>
+        <div>
+          <p class="stat">1 in 3</p>
+          <p class="text-sm text-navy-600">pupils said "AI can get it wrong" — unprompted</p>
+        </div>
+      </div>
+      <p class="mt-4 text-xs text-navy-400">Source: POST evaluation, 19 May 2026 — see About &amp; Provenance.</p>
+    </div>
+  </section>
+
+  <!-- Four levels -->
+  <section class="section border-t border-navy-100">
+    <p class="eyebrow">The architecture</p>
+    <h2 class="mt-3 text-3xl font-bold text-navy-950">Four levels, one logic</h2>
+    <p class="mt-3 max-w-3xl text-navy-700">
+      The same methodology — the Teenager Circle, the Talento · Valore · Successo arc,
+      Human-in-the-Loop by design — is adapted to four audiences. Level 1 and 2 are
+      already running in the field. Levels 3 and 4 are roadmap, built on the same logic.
+    </p>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      {levels.map((level) => (
+        <a href={level.href} class="card flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-navy-900 text-base font-bold text-orange-400">
+              {level.number}
+            </span>
+            <StatusBadge status={level.status} label={level.statusLabel} />
+          </div>
+          <h3 class="text-xl font-bold text-navy-950">{level.name}</h3>
+          <p class="text-sm font-medium text-navy-500">{level.audience}</p>
+          <p class="text-sm text-navy-700">{level.tagline}</p>
+          <span class="mt-auto text-sm font-semibold text-orange-600">Explore →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Dual beneficiary -->
+  <section class="section border-t border-navy-100">
+    <div class="grid gap-10 md:grid-cols-2 md:items-center">
+      <div>
+        <p class="eyebrow">Why it works</p>
+        <h2 class="mt-3 text-3xl font-bold text-navy-950">A dual-beneficiary model</h2>
+        <p class="mt-4 text-navy-700">
+          Secondary-school students aren't assistants — they are the primary educators
+          of the AI-literacy moments for younger pupils. Teaching consolidates their own
+          learning, and primary pupils learn AI literacy from near-peers rather than
+          distant adults.
+        </p>
+        <ul class="mt-6 space-y-3 text-sm text-navy-700">
+          <li class="flex gap-3"><span class="tag">Primary pupils</span> beneficiaries of AI literacy, in the strict sense.</li>
+          <li class="flex gap-3"><span class="tag">Liceo students</span> beneficiaries of a transformative PCTO experience — from AI users to "AI ambassadors".</li>
+        </ul>
+        <a href="/how-it-works" class="mt-6 inline-block btn-secondary">Read the full methodology</a>
+      </div>
+      <div class="card">
+        <p class="text-xs font-semibold uppercase tracking-widest text-navy-400">The Four Stations</p>
+        <ol class="mt-4 space-y-3 text-sm">
+          <li><span class="font-bold text-navy-900">1 · Talento</span> — talent &amp; self-discovery</li>
+          <li><span class="font-bold text-navy-900">2 · Valore</span> — from talent to contribution</li>
+          <li><span class="font-bold text-navy-900">3 · Successo</span> — redefining success</li>
+          <li><span class="font-bold text-navy-900">4 · Comic-Strip Review</span> — Human-in-the-Loop with real AI outputs</li>
+        </ol>
+        <a href="/primary" class="mt-5 inline-block text-sm font-semibold text-orange-600">See station details →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section border-t border-navy-100 text-center">
+    <h2 class="text-2xl font-bold text-navy-950">Jointly developed with the Palestra AI school network</h2>
+    <p class="mx-auto mt-3 max-w-2xl text-navy-700">
+      IC Bianca, IC Capuana-De Amicis and Liceo Majorana (Avola, Sicily) — and now in
+      research collaboration with INSEAD for Phase II, AY 2026/27.
+    </p>
+    <a href="/about" class="mt-6 inline-block btn-primary">About &amp; provenance</a>
+  </section>
+</Layout>

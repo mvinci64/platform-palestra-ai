@@ -1,0 +1,167 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const stations = [
+  {
+    n: '1',
+    name: 'Talento',
+    subtitle: 'Talent & self-discovery',
+    text: 'Each pupil discovers what they are good at, what excites them, what is theirs. Talent is plural — every pupil has their own, and discovering it precedes any technical literacy.',
+    recall: '"Ognuno ha talenti diversi" — everyone has different talents',
+    stat: '71%',
+    statLabel: 'positive station rating',
+  },
+  {
+    n: '2',
+    name: 'Valore',
+    subtitle: 'From talent to contribution',
+    text: 'Personal talent acquires meaning when it contributes to others. The pupil moves from "what am I good at" to "my talent has value when it helps someone else".',
+    recall: '"Il mio talento può aiutare gli altri" — my talent can help others',
+    stat: '72%',
+    statLabel: 'positive station rating',
+  },
+  {
+    n: '3',
+    name: 'Successo',
+    subtitle: 'Redefining success',
+    text: 'Success is not synonymous with winning. It includes effort, perseverance, and learning from failure — gently challenging the default school definition of success.',
+    recall: '"Il successo non è solo vincere" — success is not only about winning',
+    stat: '78%',
+    statLabel: 'positive rating — the most liked of the three concept stations',
+    highlight: '61% of pupils named this as the lesson they remembered — the single largest concept-recall figure of the entire POST evaluation.',
+  },
+  {
+    n: '4',
+    name: 'Comic-Strip Review',
+    subtitle: 'Human-in-the-Loop',
+    text: 'Pupils inspect real AI-generated comics next to the source story and flag what is wrong, missing, or stereotyped. The pupil checks the AI, not the other way around.',
+    recall: '"L\'IA può sbagliare i disegni" — AI can get the drawings wrong',
+    stat: '64%',
+    statLabel: 'rated the station "tantissimo" — the most liked station of the entire programme',
+    highlight: '1 pupil in 3 independently formulated "AI can be wrong, I need to check" — what we call Human-in-the-Loop a 10 anni.',
+  },
+];
+---
+
+<Layout title="How it works" description="The Teenager Circle, the Talento · Valore · Successo arc, and Human-in-the-Loop by design.">
+  <section class="section">
+    <p class="eyebrow">Methodology</p>
+    <h1 class="mt-3 text-4xl font-bold text-navy-950 md:text-5xl">How Palestra AI works</h1>
+    <p class="mt-5 max-w-3xl text-lg text-navy-700">
+      Generative AI as a medium for human formation — not a substitute for it.
+      Two ideas carry the whole architecture: the <strong>Teenager Circle</strong>
+      (near-peer instruction) and the <strong>Four Stations</strong>
+      (Talento → Valore → Successo → Comic-Strip Review).
+    </p>
+  </section>
+
+  <!-- Teenager Circle -->
+  <section class="section border-t border-navy-100">
+    <div class="grid gap-10 md:grid-cols-2">
+      <div>
+        <p class="eyebrow">The methodological core</p>
+        <h2 class="mt-3 text-3xl font-bold text-navy-950">The Teenager Circle</h2>
+        <p class="mt-4 text-navy-700">
+          Secondary-school students (15–18) are placed in the role of <strong>primary
+          educators</strong> — not assistants, not facilitators — of the AI-literacy
+          moments for primary-school pupils (8–11). They design the station exercises,
+          lead the discussion, manage the interaction with the generative model, and
+          debrief the younger pupils.
+        </p>
+        <p class="mt-4 text-navy-700">
+          The mechanism rests on two findings from learning science: <em>near-peer
+          instruction</em> outperforms far-distance instruction for concept anchoring,
+          and <em>the act of teaching</em> consolidates the teacher's own learning more
+          durably than passive exposure.
+        </p>
+        <p class="mt-4 text-navy-700">
+          In Italy, this runs through the school-to-work programme
+          (PCTO / Formazione Scuola Lavoro): the Liceo Majorana cohort serves through
+          PCTO, while primary pupils are the audience they engage with.
+        </p>
+      </div>
+      <div class="card flex flex-col gap-4">
+        <p class="text-xs font-semibold uppercase tracking-widest text-navy-400">Dual-beneficiary model</p>
+        <div class="rounded-lg bg-navy-50 p-4">
+          <p class="font-bold text-navy-900">Primary pupils (8–11)</p>
+          <p class="mt-1 text-sm text-navy-700">Beneficiaries of AI literacy, in the strict sense.</p>
+        </div>
+        <div class="rounded-lg bg-orange-100 p-4">
+          <p class="font-bold text-navy-900">Liceo students (15–18)</p>
+          <p class="mt-1 text-sm text-navy-700">
+            Beneficiaries of a transformative PCTO experience — a measurable shift from
+            <em>consumers</em>, to <em>designers</em>, to <strong>"AI ambassadors"</strong>:
+            students who hold themselves accountable for how AI is introduced to those
+            younger than them.
+          </p>
+        </div>
+        <p class="text-xs text-navy-400">
+          Across the two cohorts (~80 + ~70 students), this transformation is now
+          recognised as a primary outcome of the programme in its own right.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Four Stations -->
+  <section class="section border-t border-navy-100">
+    <p class="eyebrow">The operational unit</p>
+    <h2 class="mt-3 text-3xl font-bold text-navy-950">The Four Stations</h2>
+    <p class="mt-3 max-w-3xl text-navy-700">
+      Each station is a self-contained 25–35 minute experience, designed and led by Liceo
+      Majorana co-educators, with one teacher observing. Stations 1–3 build the human
+      foundations — who I am, what I can contribute, how I read success. Station 4 then
+      introduces generative AI as something to be <em>inspected through</em> those
+      foundations: the pupil checks the AI, not the other way around.
+    </p>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      {stations.map((s) => (
+        <div class="card">
+          <div class="flex items-center justify-between">
+            <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-navy-900 text-base font-bold text-orange-400">{s.n}</span>
+            <span class="stat text-2xl">{s.stat}</span>
+          </div>
+          <h3 class="mt-3 text-xl font-bold text-navy-950">{s.name}</h3>
+          <p class="text-sm font-medium text-orange-600">{s.subtitle}</p>
+          <p class="mt-3 text-sm text-navy-700">{s.text}</p>
+          <p class="mt-3 text-xs font-semibold uppercase tracking-widest text-navy-400">Top concept recall (POST, 19 May 2026)</p>
+          <p class="mt-1 text-sm italic text-navy-700">{s.recall}</p>
+          <p class="mt-1 text-xs text-navy-400">{s.statLabel}</p>
+          {s.highlight && (
+            <p class="mt-3 rounded-md bg-orange-100 p-3 text-sm font-medium text-navy-900">{s.highlight}</p>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <p class="mt-8 text-sm text-navy-500">
+      Rotation: the four stations run in parallel; each class rotates through all four
+      during a single half-day session. Each station is led by two Liceo Majorana
+      students in tandem. The primary teacher observes and takes the
+      <em>Diario di Bordo Docenti</em> notes — a primary qualitative data source.
+    </p>
+
+    <div class="mt-8">
+      <a href="/primary" class="btn-primary">See Level 1 — Primary School in detail</a>
+    </div>
+  </section>
+
+  <!-- Open research questions -->
+  <section class="section border-t border-navy-100">
+    <p class="eyebrow">Where research meets practice</p>
+    <h2 class="mt-3 text-3xl font-bold text-navy-950">Open questions for Phase II</h2>
+    <p class="mt-3 max-w-3xl text-navy-700">
+      The Teenager Circle is simultaneously the educational mechanism and the
+      measurement instrument — the Liceo Majorana 5A co-educators conducted the 1-to-1
+      POST interviews with the primary pupils themselves. This is a deliberate design
+      choice, but it raises questions that call for academic collaboration:
+    </p>
+    <ul class="mt-6 space-y-3 text-sm text-navy-700">
+      <li class="card">Is the entanglement of mechanism and measurement instrument an interesting design feature, or a confound to engineer out?</li>
+      <li class="card">What evaluation instruments capture the transition from AI users to "AI ambassadors" without collapsing the construct into reductive proxies?</li>
+      <li class="card">What governance and ethical safeguards are required for near-peer AI instruction at scale, when minors are on both sides of the educator/learner relationship?</li>
+      <li class="card">Which dimensions of the Teenager Circle are robust across cultural and institutional contexts, and which are specific to the Italian educational fabric in which they emerged?</li>
+    </ul>
+  </section>
+</Layout>
