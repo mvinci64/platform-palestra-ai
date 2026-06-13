@@ -1,4 +1,4 @@
-name: Deploy platform.palestra.ai
+name: Deploy platform.palestra.ai (Cloudflare Pages)
 
 on:
   push:
@@ -32,4 +32,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=platform-palestra-ai
+          command: pages deploy dist --project-name=platform-palestra-ai-site
